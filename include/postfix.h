@@ -1,8 +1,11 @@
-// Copyright 2020 A.SHT
+// Copyright 2021 Bodrov Egor
 #ifndef INCLUDE_POSTFIX_H_
 #define INCLUDE_POSTFIX_H_
+
+#include "MyStack.h"
 #include <string>
 
+int priority(char c);
 std::string infix2postfix(std::string infix);
 
 #endif  // INCLUDE_POSTFIX_H_
