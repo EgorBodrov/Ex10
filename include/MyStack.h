@@ -4,12 +4,12 @@
 
 template<class T>
 class MyStack {
-private:
+ private:
     T* data;
     int size;
     int head;
 
-public:
+ public:
     explicit MyStack(int n)
         : size {n}, head {0} {
         data = new T[n];
@@ -53,7 +53,6 @@ public:
     ~MyStack() {
         delete[] data;
     }
-
 };
 
 #endif  // INCLUDE_MYSTACK_H_
