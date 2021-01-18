@@ -28,26 +28,23 @@ std::string infix2postfix(std::string infix) {
         }
 
         int pr = priority(c);
-        if (pr == 0 || pr > -1 && op.isEmpty() == true || 
+        if (pr == 0 || pr > -1 && op.isEmpty() == true ||
             pr > priority(op.get())) {
             op.push(c);
-        }
-        else if (pr == 1) {
+        } else if (pr == 1) {
             while (op.get() != '(') {
                 out.push_back(op.pop());
                 out.push_back(' ');
             }
             op.pop();
 
-        }
-        else if (pr > -1) {
+        } else if (pr > -1) {
             while (op.isEmpty() == false && priority(op.get()) >= pr) {
                 out.push_back(op.pop());
                 out.push_back(' ');
             }
             op.push(c);
         }
-
     }
     if (!tmp.empty()) {
         out += tmp;
@@ -57,6 +54,6 @@ std::string infix2postfix(std::string infix) {
         out.push_back(op.pop());
         out.push_back(' ');
     }
-    out[out.size() - 1] = '\0';
+    out.pop_back();
     return out;
 }
